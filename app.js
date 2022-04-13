@@ -9,7 +9,7 @@ const {invalidRouteHandler, getServerErrorHandler} = require('./error')
 const app = express()
 
 app.use(express.json())
-
+// app.get("/", )
 app.get("/api", getEndpoints);
 app.get('/api/topics', getTopics)
 app.get('/api/articles/:article_id', findArticlesById)

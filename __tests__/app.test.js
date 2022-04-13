@@ -16,6 +16,27 @@ afterAll(() => {
 
 describe('App endpoints', ()=>{
 
+    test("Status 200 - Responds with a JSON description of all endpoints", () => {
+        return request(app)
+          .get("/api")
+          .expect(200)
+          .then(({ body: { endpoints } }) => {
+            expect(endpoints).toEqual(
+              expect.objectContaining({
+                "GET /api": expect.any(Object),
+                "GET /api/topics": expect.any(Object),
+                "GET /api/users": expect.any(Object),
+                "GET /api/articles": expect.any(Object),
+                "GET /api/articles/:article_id": expect.any(Object),
+                "PATCH /api/articles/:article_id": expect.any(Object),
+                "GET /api/articles/:article_id/comments": expect.any(Object),
+                "POST /api/articles/:article_id/comments": expect.any(Object),
+                "DELETE /api/comments/:comment_id": expect.any(Object),
+              })
+            );
+          });
+      });
+
     test("Status 404 - Path not found ", () => {
         return request(app)
           .get("/api/invalid-endpoint")
