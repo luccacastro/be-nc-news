@@ -19,12 +19,11 @@ Current features:
 
 ## Hosted Version
 
-https://nc-news-ddhendon.herokuapp.com/api
 
 ## Clone and Install
 
 Clone the repository into a local folder.
-` git clone https://github.com/dd-hendon/nc-news-back-end.git`
+` git clone https://github.com/luccacastro/be-nc-news.git
 
 Make sure node is installed up to the required version (see below). Make use of `node -v` if unsure of your current version.
 
@@ -61,5 +60,3 @@ In `.env.test`:
 - postgres 14.2
 
 ## Front End utilising this API
-- Deployed Site https://nc-news-dd-hendon.netlify.app/
-- Repo https://github.com/dd-hendon/nc-news-front-end
