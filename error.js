@@ -8,10 +8,13 @@ exports.invalidRouteHandler = (err,req,res,next) => {
 }
 
 exports.getServerErrorHandler = (err,req,res,next) =>{
+        // if(err.code == "23503"){
+        //     err.message = ""
+        // }
         if(err){
             res.status(err.status || 500);
             res.send({
-            message: err.message
+                message: err.message
             });
             // console.log(err)
         }else{
